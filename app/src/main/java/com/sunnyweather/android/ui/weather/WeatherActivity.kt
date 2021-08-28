@@ -1,4 +1,4 @@
-package com.sunnyweather.android
+package com.sunnyweather.android.ui.weather
 
 import android.graphics.Color
 import android.os.Bundle
@@ -10,9 +10,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.sunnyweather.android.logic.modle.Weather
-import com.sunnyweather.android.logic.modle.getSky
-import com.sunnyweather.android.ui.weather.WeatherViewModel
+import com.sunnyweather.android.R
+import com.sunnyweather.android.logic.model.Weather
+import com.sunnyweather.android.logic.model.getSky
 import kotlinx.android.synthetic.main.activity_weather.*
 import kotlinx.android.synthetic.main.forecast.*
 import kotlinx.android.synthetic.main.life_index.*
@@ -68,7 +68,8 @@ class WeatherActivity : AppCompatActivity() {
         for (i in 0 until days) {
             val skycon = daily.skycon[i]
             val temperature = daily.temperature[i]
-            val view = LayoutInflater.from(this).inflate(R.layout.forecast_item,
+            val view = LayoutInflater.from(this).inflate(
+                R.layout.forecast_item,
                 forecastLayout, false)
             val dateInfo = view.findViewById(R.id.dateInfo) as TextView
             val skyIcon = view.findViewById(R.id.skyIcon) as ImageView
